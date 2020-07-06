@@ -1704,16 +1704,18 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.http = void 0;var BASE_URL = 'http://localhost:8082';
-var http = function http(url) {var opt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.http = void 0; // const BASE_URL = 'http://localhost:8082';
+var BASE_URL = 'http://192.168.0.104:8082';
+var http = function http(url) {var opt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { url: '' };
   return new Promise(function (resolve, reject) {
     uni.request({
-      url: BASE_URL + url,
+      url: BASE_URL + url + opt.url,
       method: opt.method || 'GET',
       data: opt.data || {},
       success: function success(res) {
         if (res.data.status !== 0) {
           return uni.showToast({
+            icon: 'none',
             title: '获取数据失败' });
 
         }
@@ -1721,6 +1723,7 @@ var http = function http(url) {var opt = arguments.length > 1 && arguments[1] !=
       },
       fail: function fail(err) {
         uni.showToast({
+          icon: 'none',
           title: '请求接口失败' });
 
         reject(err);
@@ -1729,6 +1732,191 @@ var http = function http(url) {var opt = arguments.length > 1 && arguments[1] !=
   });
 };exports.http = http;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 113:
+/*!***********************************************************!*\
+  !*** E:/UNI-APP-TEST-WMJ/uni-wmj/util/api/news-detail.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getDetail = void 0;var _http = __webpack_require__(/*! ../http.js */ 11);
+var getDetail = function getDetail(opt) {return (0, _http.http)('/api/getnew', opt);};exports.getDetail = getDetail;
+
+/***/ }),
+
+/***/ 126:
+/*!************************************************************!*\
+  !*** E:/UNI-APP-TEST-WMJ/uni-wmj/util/api/goods-detail.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getDetailContent = exports.getDetailInfo = exports.getSwipers = void 0;var _http = __webpack_require__(/*! ../http.js */ 11);
+var getSwipers = function getSwipers(opt) {return (0, _http.http)('/api/getthumimages/', opt);};exports.getSwipers = getSwipers;
+var getDetailInfo = function getDetailInfo(opt) {return (0, _http.http)('/api/goods/getinfo/', opt);};exports.getDetailInfo = getDetailInfo;
+var getDetailContent = function getDetailContent(opt) {return (0, _http.http)('/api/goods/getdesc/', opt);};exports.getDetailContent = getDetailContent;
+
+/***/ }),
+
+/***/ 139:
+/*!*****************************************************************!*\
+  !*** E:/UNI-APP-TEST-WMJ/uni-wmj/components/uni-icons/icons.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  "pulldown": "\uE588",
+  "refreshempty": "\uE461",
+  "back": "\uE471",
+  "forward": "\uE470",
+  "more": "\uE507",
+  "more-filled": "\uE537",
+  "scan": "\uE612",
+  "qq": "\uE264",
+  "weibo": "\uE260",
+  "weixin": "\uE261",
+  "pengyouquan": "\uE262",
+  "loop": "\uE565",
+  "refresh": "\uE407",
+  "refresh-filled": "\uE437",
+  "arrowthindown": "\uE585",
+  "arrowthinleft": "\uE586",
+  "arrowthinright": "\uE587",
+  "arrowthinup": "\uE584",
+  "undo-filled": "\uE7D6",
+  "undo": "\uE406",
+  "redo": "\uE405",
+  "redo-filled": "\uE7D9",
+  "bars": "\uE563",
+  "chatboxes": "\uE203",
+  "camera": "\uE301",
+  "chatboxes-filled": "\uE233",
+  "camera-filled": "\uE7EF",
+  "cart-filled": "\uE7F4",
+  "cart": "\uE7F5",
+  "checkbox-filled": "\uE442",
+  "checkbox": "\uE7FA",
+  "arrowleft": "\uE582",
+  "arrowdown": "\uE581",
+  "arrowright": "\uE583",
+  "smallcircle-filled": "\uE801",
+  "arrowup": "\uE580",
+  "circle": "\uE411",
+  "eye-filled": "\uE568",
+  "eye-slash-filled": "\uE822",
+  "eye-slash": "\uE823",
+  "eye": "\uE824",
+  "flag-filled": "\uE825",
+  "flag": "\uE508",
+  "gear-filled": "\uE532",
+  "reload": "\uE462",
+  "gear": "\uE502",
+  "hand-thumbsdown-filled": "\uE83B",
+  "hand-thumbsdown": "\uE83C",
+  "hand-thumbsup-filled": "\uE83D",
+  "heart-filled": "\uE83E",
+  "hand-thumbsup": "\uE83F",
+  "heart": "\uE840",
+  "home": "\uE500",
+  "info": "\uE504",
+  "home-filled": "\uE530",
+  "info-filled": "\uE534",
+  "circle-filled": "\uE441",
+  "chat-filled": "\uE847",
+  "chat": "\uE263",
+  "mail-open-filled": "\uE84D",
+  "email-filled": "\uE231",
+  "mail-open": "\uE84E",
+  "email": "\uE201",
+  "checkmarkempty": "\uE472",
+  "list": "\uE562",
+  "locked-filled": "\uE856",
+  "locked": "\uE506",
+  "map-filled": "\uE85C",
+  "map-pin": "\uE85E",
+  "map-pin-ellipse": "\uE864",
+  "map": "\uE364",
+  "minus-filled": "\uE440",
+  "mic-filled": "\uE332",
+  "minus": "\uE410",
+  "micoff": "\uE360",
+  "mic": "\uE302",
+  "clear": "\uE434",
+  "smallcircle": "\uE868",
+  "close": "\uE404",
+  "closeempty": "\uE460",
+  "paperclip": "\uE567",
+  "paperplane": "\uE503",
+  "paperplane-filled": "\uE86E",
+  "person-filled": "\uE131",
+  "contact-filled": "\uE130",
+  "person": "\uE101",
+  "contact": "\uE100",
+  "images-filled": "\uE87A",
+  "phone": "\uE200",
+  "images": "\uE87B",
+  "image": "\uE363",
+  "image-filled": "\uE877",
+  "location-filled": "\uE333",
+  "location": "\uE303",
+  "plus-filled": "\uE439",
+  "plus": "\uE409",
+  "plusempty": "\uE468",
+  "help-filled": "\uE535",
+  "help": "\uE505",
+  "navigate-filled": "\uE884",
+  "navigate": "\uE501",
+  "mic-slash-filled": "\uE892",
+  "search": "\uE466",
+  "settings": "\uE560",
+  "sound": "\uE590",
+  "sound-filled": "\uE8A1",
+  "spinner-cycle": "\uE465",
+  "download-filled": "\uE8A4",
+  "personadd-filled": "\uE132",
+  "videocam-filled": "\uE8AF",
+  "personadd": "\uE102",
+  "upload": "\uE402",
+  "upload-filled": "\uE8B1",
+  "starhalf": "\uE463",
+  "star-filled": "\uE438",
+  "star": "\uE408",
+  "trash": "\uE401",
+  "phone-filled": "\uE230",
+  "compose": "\uE400",
+  "videocam": "\uE300",
+  "trash-filled": "\uE8DC",
+  "download": "\uE403",
+  "chatbubble-filled": "\uE232",
+  "chatbubble": "\uE202",
+  "cloud-download": "\uE8E4",
+  "cloud-upload-filled": "\uE8E5",
+  "cloud-upload": "\uE8E6",
+  "cloud-download-filled": "\uE8E9",
+  "headphones": "\uE8BF",
+  "shop": "\uE609" };exports.default = _default;
+
+/***/ }),
+
+/***/ 18:
+/*!*****************************************************!*\
+  !*** E:/UNI-APP-TEST-WMJ/uni-wmj/util/api/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getGoods = exports.getLunbo = void 0;var _http = __webpack_require__(/*! ../http.js */ 11);
+var getLunbo = function getLunbo(opt) {return (0, _http.http)('/api/getlunbo', opt);};exports.getLunbo = getLunbo;
+
+var getGoods = function getGoods(opt) {return (0, _http.http)('/api/getgoods?pageindex=1', opt);};exports.getGoods = getGoods;
 
 /***/ }),
 
@@ -7792,19 +7980,6 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 37:
-/*!*****************************************************!*\
-  !*** E:/UNI-APP-TEST-WMJ/uni-wmj/util/api/index.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getLunbo = void 0;var _http = __webpack_require__(/*! ../http.js */ 11);
-var getLunbo = function getLunbo(opt) {return (0, _http.http)('/api/getlunbo', opt);};exports.getLunbo = getLunbo;
-
-/***/ }),
-
 /***/ 4:
 /*!**********************************************!*\
   !*** E:/UNI-APP-TEST-WMJ/uni-wmj/pages.json ***!
@@ -7813,6 +7988,48 @@ var getLunbo = function getLunbo(opt) {return (0, _http.http)('/api/getlunbo', o
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ 47:
+/*!*****************************************************!*\
+  !*** E:/UNI-APP-TEST-WMJ/uni-wmj/util/api/goods.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getGoods = void 0;var _http = __webpack_require__(/*! ../http.js */ 11);
+var getGoods = function getGoods(opt) {return (0, _http.http)('/api/getgoods', opt);};exports.getGoods = getGoods;
+
+/***/ }),
+
+/***/ 64:
+/*!****************************************************!*\
+  !*** E:/UNI-APP-TEST-WMJ/uni-wmj/util/api/pics.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getItem = exports.getPics = void 0;var _http = __webpack_require__(/*! ../http.js */ 11);
+
+var getPics = function getPics(opt) {return (0, _http.http)('/api/getimgcategory', opt);};exports.getPics = getPics;
+var getItem = function getItem(opt) {return (0, _http.http)('/api/getimages/', opt);};exports.getItem = getItem;
+
+/***/ }),
+
+/***/ 96:
+/*!****************************************************!*\
+  !*** E:/UNI-APP-TEST-WMJ/uni-wmj/util/api/news.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getNews = void 0;var _http = __webpack_require__(/*! ../http.js */ 11);
+
+var getNews = function getNews(opt) {return (0, _http.http)('/api/getnewslist', opt);};exports.getNews = getNews;
 
 /***/ })
 

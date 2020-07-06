@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "uni-app-test-shop",
-  "usingComponents": {}
+  "usingComponents": {
+    "swiper-dot": "/component/swiperDot",
+    "goods-list": "/component/goods-list"
+  }
 }

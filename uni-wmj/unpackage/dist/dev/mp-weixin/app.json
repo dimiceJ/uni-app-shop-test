@@ -3,7 +3,13 @@
     "pages/index/index",
     "pages/cart/cart",
     "pages/news/news",
-    "pages/member/member"
+    "pages/member/member",
+    "pages/goods/goods",
+    "pages/contact/contact",
+    "pages/pics/pics",
+    "pages/videos/videos",
+    "pages/news-detail/news-detail",
+    "pages/goods-detail/goods-detail"
   ],
   "subPackages": [],
   "window": {
@@ -42,6 +48,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap10.json"
+  "usingComponents": {}
 }

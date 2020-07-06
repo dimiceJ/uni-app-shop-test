@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "news",
-  "usingComponents": {}
+  "usingComponents": {
+    "news-item": "/component/news-item"
+  }
 }

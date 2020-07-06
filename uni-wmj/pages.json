@@ -23,7 +23,30 @@
       "style": {
         "navigationBarTitleText": "member"
       }
+    }, {
+      "path": "pages/goods/goods",
+      "style": {
+         "navigationBarTitleText": "测试超市",
+         "enablePullDownRefresh": true//就是这个
+      }
+    }, {
+      "path": "pages/contact/contact",
+      "style": {}
+    }, {
+      "path": "pages/pics/pics",
+      "style": {}
+    }, {
+      "path": "pages/videos/videos",
+      "style": {}
     }
+        ,{
+            "path" : "pages/news-detail/news-detail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/goods-detail/goods-detail",
+            "style" : {}
+        }
     ],
   "globalStyle": {
     "navigationBarTextStyle": "white",
@@ -32,8 +55,8 @@
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
-    "selectedColor":"#b50e03",
-    "color":"#ccc",
+    "selectedColor": "#b50e03",
+    "color": "#ccc",
     "list": [{
         "text": "首页",
         "pagePath": "pages/index/index",

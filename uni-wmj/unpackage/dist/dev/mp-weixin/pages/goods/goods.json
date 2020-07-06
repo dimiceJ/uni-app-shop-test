@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "测试超市",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "goods-list": "/component/goods-list"
+  }
+}
